@@ -8,6 +8,7 @@ import { Dashboard } from './components/Dashboard';
 import { ContextHistory } from './components/ContextHistory';
 import { AuthForm } from './components/AuthForm';
 import { Header } from './components/Header';
+import { Analytics } from './components/Analytics';
 import { useTasks } from './hooks/useTasks';
 import { useContexts } from './hooks/useContexts';
 import { useAuth } from './hooks/useAuth';
@@ -166,14 +167,7 @@ function App() {
         )}
 
         {activeTab === 'analytics' && (
-          <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-            <BarChart3 className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Analytics Dashboard</h3>
-            <p className="text-gray-600">
-              Advanced analytics and insights coming soon. This will include task completion trends, 
-              productivity metrics, and AI-powered recommendations.
-            </p>
-          </div>
+          <Analytics tasks={allTasks} />
         )}
 
         {/* Task Form Modal */}
